@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^4.6.1",
     "d3-time-format": "^4.1.0",
     "gatsby": "^4.5.2",
     "gatsby-cli": "^4.5.1",
