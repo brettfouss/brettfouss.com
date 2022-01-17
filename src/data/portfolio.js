@@ -40,7 +40,7 @@ const portfolio = [
   {
     name: "chinese-vis",
     type: Types.PROJECT,
-    link: "https://brettfouss.github.io/chinese-vis",
+    link: "https://chinese-vis.brettfouss.com",
     imagePath: "chinese-vis-portfolio-image.png",
     title: "Visualizing the Chinese Language",
     description:
