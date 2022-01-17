@@ -105,7 +105,8 @@ const Header = () => {
         className="hide-mobile"
         alt="profile"
         placeholder="blurred"
-        layout="fixed"
+        layout="constrained"
+        quality={100}
         height={200}
         width={200}
       />
