@@ -1,6 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import ButtonLink from "../components/button-link"
 import Card from "../components/card"
 import Content from "../components/content"
 import Layout from "../components/layout"
@@ -35,84 +33,51 @@ const HeaderContainer = styled(Section)`
     }
   }
 `
-
-const useResumePdfFile = () => {
-  const {
-    allFile: {
-      edges: [{ node: data }],
-    },
-  } = useStaticQuery(graphql`
-    {
-      allFile(
-        filter: { name: { eq: "brett-fouss-resume" }, extension: { eq: "pdf" } }
-      ) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
-      }
-    }
-  `)
-
-  return data
-}
-
-const Header = () => {
-  const { publicURL: resumePublicUrl } = useResumePdfFile()
-
-  return (
-    <HeaderContainer>
-      <div id="header-text">
-        <h1>Brett Fouss</h1>
-        <Content>
-          👋 Hi, I'm Brett&mdash;software engineer, data visualization fan,
-          music collector, and food eater. Right now, I'm a Technical Lead at
-          <span>
-            &nbsp;
-            <Hubspot size={16} />
-            &nbsp;HubSpot
-          </span>
-          , where I'm helping build the next generation of visual analytics and
-          data operations tools.
-          <br />
-          <br />
-          <ButtonLink href={resumePublicUrl} download>
-            Click to download my resume
-          </ButtonLink>
-          <br />
-          <br />
-          Reach out at bmfouss (at) gmail (dot) com
-          <br />
-          <ExternalLink
-            href="https://www.linkedin.com/in/brett-fouss-697635a9"
-            icon={<Linkedin size={16} />}
-          >
-            LinkedIn
-          </ExternalLink>
-          <br />
-          <ExternalLink
-            href="https://www.github.com/brettfouss/"
-            icon={<Github size={16} />}
-          >
-            GitHub
-          </ExternalLink>
-        </Content>
-      </div>
-      <StaticImage
-        src="../images/profile.jpg"
-        className="hide-mobile"
-        alt="profile"
-        placeholder="blurred"
-        layout="constrained"
-        quality={100}
-        height={200}
-        width={200}
-      />
-    </HeaderContainer>
-  )
-}
+const Header = () => (
+  <HeaderContainer>
+    <div id="header-text">
+      <h1>Brett Fouss</h1>
+      <Content>
+        👋 Hi, I'm Brett&mdash;software engineer, data visualization fan, music
+        collector, and food eater. Right now, I'm a Technical Lead at
+        <span>
+          &nbsp;
+          <Hubspot size={16} />
+          &nbsp;HubSpot
+        </span>
+        , where I'm helping build the next generation of visual analytics and
+        data operations tools.
+        <br />
+        <br />
+        Reach out at bmfouss (at) gmail (dot) com
+        <br />
+        <ExternalLink
+          href="https://www.linkedin.com/in/brett-fouss-697635a9"
+          icon={<Linkedin size={16} />}
+        >
+          LinkedIn
+        </ExternalLink>
+        <br />
+        <ExternalLink
+          href="https://www.github.com/brettfouss/"
+          icon={<Github size={16} />}
+        >
+          GitHub
+        </ExternalLink>
+      </Content>
+    </div>
+    <StaticImage
+      src="../images/profile.jpg"
+      className="hide-mobile"
+      alt="profile"
+      placeholder="blurred"
+      layout="constrained"
+      quality={100}
+      height={200}
+      width={200}
+    />
+  </HeaderContainer>
+)
 
 // portfolio section
 const Portfolio = () => (
